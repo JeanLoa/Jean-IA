@@ -12,7 +12,7 @@ int factorial(int x) {
 	return factorial;
 }
 
-int formula(int i, int a, int b, int x) {
+double formula(int i, int a, int b, int x) {
 	int resultado;
 	if (i % 2 != 0) {
 		resultado = pow(-1, i) * pow(a + i, b) / (b + factorial(x));
@@ -42,8 +42,8 @@ int main() {
 		cin >> b;
 	}
 	for (int j = 1; j <= i; ++j) {
-		cout << "En el termino " << j << " el valor es: " << formula(j, a, b, x) << endl << _getch();
 		sumatotal += formula(j, a, b, x);
+		cout << "En el termino " << j << " el valor es: " << sumatotal << endl << _getch();
 		++x;
 		for (int k = 0; k < 100; k += 7) {
 			if (x > k) {
