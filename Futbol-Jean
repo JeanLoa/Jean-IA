@@ -78,11 +78,11 @@ int main() {
         prev_y = y;
 
         Pelota(pelx, pely);
-        if (pelx == x && pely == y + 2) {
+        if (pelx == x - 1 && pely == y + 2) {
             borrar_Pel(pelx, pely);
             Pelota(pelx -= 1, pely);
         }
-        if (pelx == x + 2 && pely == y + 2) {
+        if (pelx == x + 3 && pely == y + 2) {
             borrar_Pel(pelx, pely);
             Pelota(pelx += 1, pely);
         }
@@ -97,9 +97,14 @@ int main() {
 
         Arco(arcx, arcy);
         MoverHeroe(x, y);
-
         Borrar_Heroe(prev_x, prev_y);
         Muñeco(x, y);
+        if (x >= 110 || x <= 2) {
+            x = 10;
+        }
+        if (y >= 20 || y <= 2) {
+            y = 5;
+        }
         if (pelx >= 100 && pelx <= 105 && pely >= 7 && pely <= 11) {
             goal = true;
             Goal();
