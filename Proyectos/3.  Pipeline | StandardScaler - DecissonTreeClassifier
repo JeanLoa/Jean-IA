@@ -48,3 +48,11 @@ y_pred = model.predict(X_test)
 
 print("Accuracy:", accuracy_score(y_test, y_pred))
 print("\nReporte de Clasificación:\n", classification_report(y_test, y_pred))
+---------------------------------------------
+plt.figure(figsize=(15, 10))
+plot_tree(model.estimators_[0] if hasattr(model, "estimators_") else model,
+          feature_names=feature_names,
+          class_names=target_names,
+          filled=True,
+          rounded=True)
+plt.show()
